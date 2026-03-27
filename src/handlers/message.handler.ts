@@ -13,7 +13,7 @@ const createErrorResponse = (error: string): WebSocketResponse => {
 };
 
 // handlers específicos
-const handleGetParties = (): WebSocketResponse => {
+export const handleGetParties = (): WebSocketResponse => {
   return {
     type: "PARTIES_LIST",
     payload: partyService.getAll(),
