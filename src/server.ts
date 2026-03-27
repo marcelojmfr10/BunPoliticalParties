@@ -54,6 +54,7 @@ export const createServer = () => {
       // a socket is opened
       close(ws, code, message) {
         console.log(`Cliente desconectado: ${ws.data.clientId}`);
+        ws.unsubscribe(SERVER_CONFIG.defaultChannelName);
       }, // a socket is closed
       drain(ws) {}, // the socket is ready to receive more data
     }, // handlers
